@@ -46,10 +46,10 @@ CREATE TABLE reviews_photos
   url VARCHAR(400)
 );
 
-\COPY characteristics FROM '/seed/characteristics.csv' DELIMITERS ',' CSV header;
-\COPY characteristic_reviews FROM '/seed/characteristic_reviews.csv' DELIMITERS ',' CSV header;
-\COPY reviews_photos FROM '/seed/reviews_photos.csv' DELIMITERS ',' CSV header;
-\COPY reviews FROM '/seed/reviews.csv' DELIMITERS ',' CSV header;
+\COPY characteristics FROM '/home/ec2-user/seed/characteristics.csv' DELIMITERS ',' CSV header;
+\COPY characteristic_reviews FROM '/home/ec2-user/seed/characteristic_reviews.csv' DELIMITERS ',' CSV header;
+\COPY reviews_photos FROM '/home/ec2-user/seed/reviews_photos.csv' DELIMITERS ',' CSV header;
+\COPY reviews FROM '/home/ec2-user/seed/reviews.csv' DELIMITERS ',' CSV header;
 
 CREATE INDEX ON characteristics
 (product_id);
