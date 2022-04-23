@@ -38,45 +38,47 @@ app.use(express.static(path.join(__dirname, '../client/client/dist')));
 // });
 
 app.get('/', (req, res) => {
-  res.json({ info: 'SDC' });
+  res.json({ welcome_message: 'SDC' });
 });
 
-app.get('/products/:productId', (req, res) => {
-  const id = req.params.productId;
+//tested on legacy front end and everything went into the postgres table correctly
 
-  const options = {
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${id}`,
-    headers: { Authorization: process.env.APITOKEN },
-  };
+// app.get('/products/:productId', (req, res) => {
+//   const id = req.params.productId;
 
-  return axios(options)
-    .then((response) => {
-      res.status(200).send(response.data);
-    })
-    .catch((err) => {
-      res.status(500).end();
-      // console.error(err);
-    });
-});
+//   const options = {
+//     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${id}`,
+//     headers: { Authorization: process.env.APITOKEN },
+//   };
 
-app.get(`/products/:productId/styles`, (req, res) => {
-  const id = req.params.productId;
+//   return axios(options)
+//     .then((response) => {
+//       res.status(200).send(response.data);
+//     })
+//     .catch((err) => {
+//       res.status(500).end();
+//       // console.error(err);
+//     });
+// });
 
-  const options = {
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${id}/styles`,
-    headers: { Authorization: process.env.APITOKEN },
-  };
+// app.get(`/products/:productId/styles`, (req, res) => {
+//   const id = req.params.productId;
 
-  return axios
-    .get(options.url, options.headers)
-    .then((response) => {
-      res.status(200).send(response.data);
-    })
-    .catch((err) => {
-      res.status(500).end();
-      // console.error(err);
-    });
-});
+//   const options = {
+//     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${id}/styles`,
+//     headers: { Authorization: process.env.APITOKEN },
+//   };
+
+//   return axios
+//     .get(options.url, options.headers)
+//     .then((response) => {
+//       res.status(200).send(response.data);
+//     })
+//     .catch((err) => {
+//       res.status(500).end();
+//       // console.error(err);
+//     });
+// });
 
 app.get('/reviews/:productId', (req, res) => {
   const id = parseInt(req.params.productId);
@@ -102,7 +104,7 @@ app.put('/reviews/:reviewId/helpful', (req, res) => {
   postHelpful(id);
 });
 
-app.put('http://localhost:4321/reviews/:reviewId/report', (req, res) => {
+app.put('/reviews/:reviewId/report', (req, res) => {
   const id = parseInt(req.params.reviewId);
   postReport(id);
 });
@@ -110,10 +112,10 @@ app.put('http://localhost:4321/reviews/:reviewId/report', (req, res) => {
 //loader
 
 app.get('/loaderio-b4ddefbb827771424eee205f1b1b4690/', (req, res) => {
-  res.sendFile('/Users/joshuason/Desktop/loaderio-b4ddefbb827771424eee205f1b1b4690.txt');
+  res.sendFile('/loader/loaderio-b4ddefbb827771424eee205f1b1b4690.txt');
 });
 
-const PORT = 4321;
+const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log('listening on PORT ' + PORT);
