@@ -1,0 +1,345 @@
+.ri-parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.ri-slider {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: relative;
+  height: 50vh;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  /* min-width: 50% */
+}
+
+.headerText {
+  position: static;
+  font-size: 1.8rem;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.yo-slider {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: relative;
+  height: 50vh;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  min-width: 50%;
+  /* overflow-x:visible; */
+}
+
+.ri-thumbnail-slider-background {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0px;
+    width: 100%;
+    z-index: 250;
+    flex-direction: row;
+}
+
+.ri-thumbnail-slider {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: relative;
+  height: 75vh;
+  justify-content: start;
+  align-items: center;
+}
+
+.ri-thumbnail-hover {
+  height: 90px !important;
+  width: 90px !important;
+  border-radius: 50px;
+  padding: 10px;
+  flex: 1 20%;
+  flex: 1;
+}
+
+.ri-container {
+  height: 100%;
+  width: 90%;
+  max-height: 420px;
+  position: relative;
+  text-align: center;
+  color: #5a3b16ff;
+  border: solid;
+  border-width: 20px 1px;
+  margin: 5rem;
+  object-fit: cover;
+  object-position: bottom;
+  background-color: #5e6748ff
+}
+
+.ri-product-card {
+  object-fit:cover;
+  object-position:center;
+  position: relative
+}
+
+.yo-container {
+  display: grid;
+  align-content: center;
+  height: 100%;
+  max-height: 420px;
+  width: 90%;
+  position: relative;
+  text-align: center;
+  color: #5a3b16ff;
+  border: solid;
+  margin: 5rem;
+  object-fit: cover;
+  object-position: bottom;
+  background-color: #d8cba7ff;
+}
+
+.yo-container .yo h3 {
+  font-family: 'Noto Sans'
+}
+
+.yo-button-container {
+  height: 400px;
+  width: 300px;
+  position: static;
+  text-align: center;
+  border-radius: 10px;
+  color: #5a3b16ff;
+  border: solid;
+  margin: 1rem;
+  margin-left: 80px;
+  object-fit: cover;
+  object-position: bottom;
+  background-color: #d8cba7ff;
+}
+
+.bottom-left {
+  position: absolute;
+  text-align: left;
+  bottom: 10px;
+  left: 10px;
+  color:black;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.ri-image {
+  width: 100%;
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 0px;
+  margin: 0px;
+  object-fit: cover;
+}
+
+.ri-stars {
+  font-size: 1.7rem;
+}
+
+.yo-image {
+  width: 100%;
+  max-width: 100%;
+  max-height: 200px;;
+  border-radius: 8px;
+  margin: 0px;
+  object-fit:cover;
+  border-radius: 10px;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale (1.08);
+}
+
+.ri-thumbnails {
+  display: flex;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  width: 100px;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 255px;
+  right: 0px;
+  font-size: 3rem;
+  color:#5a3b16ff;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 255px;
+  left: 100px;
+  font-size: 3rem;
+  color:#5a3b16ff;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.thumbnail-slider-right-arrow {
+  position: absolute;
+  z-index: 5;
+  font-size: 2.3rem;
+  color: #5e6748ff;
+  cursor: pointer;
+  user-select: none;
+  top: 50%;
+  right: 10%;
+}
+
+.thumbnail-slider-left-arrow {
+  position: absolute;
+  z-index: 5;
+  font-size: 2.3rem;
+  color: #5e6748ff;
+  cursor: pointer;
+  user-select: none;
+  top: 50%;
+  left: 10%;
+}
+
+.ri-star {
+  position: absolute;
+  top: 1px;
+  right: 50px;
+  font-size: 3rem;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.yo-additem {
+  position: static;
+  font-size: 6rem;
+  color: #5a3b16ff;
+}
+
+.ri-modal-Background {
+  opacity: 0;
+  /* transition-duration: all 2s linear 3s; */
+  transition: opacity 2000ms ease-in-out;
+}
+
+.ri-modal-Background.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale (1.08);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  background: #00000078;
+  position:fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 254;
+}
+
+.ri-modal-Container {
+  width: 540px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background-color: #d8cba7ff;
+  font-family: 'Noto Sans';
+}
+
+.ri-modal-Title {
+  font-family: 'Noto Sans';
+  font-size: 1.8rem;
+  display: inline-block;
+  text-align: center;
+  margin-top: -20px;
+  color: black
+}
+
+.ri-modal-Title-Close-Button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* .ri-modal-Title-CloseButton button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  color: #283618ff
+} */
+
+.yo-item-Close-Button {
+  display: flex;
+  justify-content: flex-end;
+}
+.yo-item-Close-Button button {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  color: #283618ff;
+}
+
+.ri-modal-Container .ri-modal-Body {
+  flex: auto;
+  flex-direction: column;
+  display: flex;
+  overflow-y: scroll;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.0rem;
+  text-align: center;
+  color: black
+}
+
+.ri-modal-Container .ri-modal-Footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .ri-modal-Container .ri-modal-Footer button {
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+ background-color: #4f3517ff;
+  background-color: inherit;
+  color: white;
+  border-radius: 1px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 5px 1px #0007;
+} */
+
+.ri-modal-item-name {
+  font-family: 'Noto Sans';
+  font-size: 1.5rem;
+}
+
