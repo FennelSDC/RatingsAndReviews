@@ -70,11 +70,17 @@ CREATE INDEX ON reviews_photos
 CREATE INDEX ON reviews_photos
 (review_id);
 
+ALTER TABLE reviews
+ADD COLUMN photos TEXT[];
+
 UPDATE reviews SET photos = array(
 SELECT reviews_photos.url
 FROM reviews_photos
 WHERE reviews_photos.review_id = reviews.id
 );
+
+ALTER TABLE reviews
+ADD COLUMN characteristics_value INTEGER[];
 
 UPDATE reviews SET characteristics_value = array(
 SELECT characteristic_reviews.value
@@ -82,11 +88,17 @@ FROM characteristic_reviews
 WHERE characteristic_reviews.review_id = reviews.id
 );
 
+ALTER TABLE reviews
+ADD COLUMN characteristics_name CHARACTER VARYING;
+
 UPDATE reviews SET characteristics_name = (
 SELECT array_agg(characteristics.name)
 FROM characteristics
 WHERE characteristics.product_id = reviews.product_id
 );
+
+ALTER TABLE reviews
+ADD COLUMN characteristics_id INTEGER[];
 
 UPDATE reviews SET characteristics_id = (
 SELECT array_agg(characteristics.id)
