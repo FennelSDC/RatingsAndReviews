@@ -24,11 +24,7 @@ CREATE TABLE reviews
   reviewer_name VARCHAR(30),
   reviewer_email VARCHAR(40),
   response VARCHAR(150) DEFAULT '',
-  helpfulness INTEGER DEFAULT 0,
-  photos TEXT[],
-  characteristics_value INTEGER[],
-  characteristics_name CHARACTER VARYING,
-  characteristics_id INTEGER[]
+  helpfulness INTEGER DEFAULT 0
 );
 
 CREATE TABLE characteristic_reviews
@@ -46,10 +42,10 @@ CREATE TABLE reviews_photos
   url VARCHAR(400)
 );
 
-\COPY characteristics FROM '/home/ec2-user/seed/characteristics.csv' DELIMITERS ',' CSV header;
-\COPY characteristic_reviews FROM '/home/ec2-user/seed/characteristic_reviews.csv' DELIMITERS ',' CSV header;
-\COPY reviews_photos FROM '/home/ec2-user/seed/reviews_photos.csv' DELIMITERS ',' CSV header;
-\COPY reviews FROM '/home/ec2-user/seed/reviews.csv' DELIMITERS ',' CSV header;
+\COPY characteristics FROM '/Users/joshuason/Desktop/seed/characteristics.csv' DELIMITERS ',' CSV header;
+\COPY characteristic_reviews FROM '/Users/joshuason/Desktop/seed/characteristic_reviews.csv' DELIMITERS ',' CSV header;
+\COPY reviews_photos FROM '/Users/joshuason/Desktop/seed/reviews_photos.csv' DELIMITERS ',' CSV header;
+\COPY reviews FROM '/Users/joshuason/Desktop/seed/reviews.csv' DELIMITERS ',' CSV header;
 
 CREATE INDEX ON characteristics
 (product_id);
