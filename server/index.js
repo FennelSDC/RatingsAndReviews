@@ -111,8 +111,8 @@ app.put('/reviews/:reviewId/report', (req, res) => {
 
 //loader
 
-app.get('/loaderio-a9ccf2702a5565b6e87abd3d2a2efba7/', (req, res) => {
-  res.sendFile('/home/ec2-user/loader/loaderio-a9ccf2702a5565b6e87abd3d2a2efba7.txt');
+app.get('/loaderio-4529c8477ac465a9151d22f467a83cd6/', (req, res) => {
+  res.sendFile('/home/ec2-user/local');
 });
 
 const PORT = 3000;
