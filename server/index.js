@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '../client/client/dist')));
+// app.use(express.static(path.join(__dirname, '../client/client/dist')));
 
 // app.all('/*', (req, res) => {
 //   const { method, url, body: data, query: params } = req;

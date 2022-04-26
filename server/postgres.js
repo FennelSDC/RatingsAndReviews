@@ -1,9 +1,8 @@
 const { Client } = require('pg');
-
+require('dotenv').config();
 exports.client = new Client({
-  host: '54.235.29.34',
-  user: 'postgres',
-  password: 'password',
+  host: 'ec2-34-230-36-143.compute-1.amazonaws.com',
+  user: process.env.user,
+  password: process.env.password,
   database: 'fennel',
-  port: 5432,
 });
