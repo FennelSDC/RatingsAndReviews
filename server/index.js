@@ -4,7 +4,6 @@ const path = require('path');
 require('dotenv').config();
 const { getReviews, getMetaData, postReview, postHelpful, postReport } = require('../db/queries');
 const app = express();
-
 app.use(express.json());
 
 // app.use(express.static(path.join(__dirname, '../client/client/dist')));
@@ -111,7 +110,7 @@ app.put('/reviews/:reviewId/report', (req, res) => {
 
 //loader
 
-app.get('/loaderio-4529c8477ac465a9151d22f467a83cd6/', (req, res) => {
+app.get('/loaderio-a6b5cd59e475812e2b4c48737d8918f2/', (req, res) => {
   res.sendFile('/home/ec2-user/sdc/loader.txt');
 });
 
